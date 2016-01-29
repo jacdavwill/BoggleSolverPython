@@ -4,6 +4,7 @@
 # Purpose: The goal of this program is to allow users to solve for all of the words in a Boggle layout.
 
 import random as r
+import math
 
 print("Welcome to Boggle Solver!")
 print()
@@ -39,7 +40,7 @@ while not isSquare(len(input_word)):
     print()
     input_word = input("Please enter your board layout: ")
 
-myfile = open('/storage/emulated/0/Download/wordsEN.txt','r') # change this to be the location of your dictionary
+myfile = open('words.txt','r') # make sure both files are in the same folder
 
 global row
 global ltr_list
@@ -48,8 +49,8 @@ dic = []
 dic2 = []
 box = []
 answers = []
-row = 4
-boxnum = row ** 2
+boxnum = len(input_word)
+row = mah.sqrt(boxnum)
 qPos = []
 
 # removes all words from the dictionary that are too big or small
@@ -93,8 +94,6 @@ def indexof(x,y):
 
 # letters of the alphabet
 ltr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-
-ltr_list = []
 
 # places letters in a list    
 ltr_list = []
