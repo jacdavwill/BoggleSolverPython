@@ -40,7 +40,7 @@ while not isSquare(len(input_word)):
     print()
     input_word = input("Please enter your board layout: ")
 
-myfile = open('words.txt','r') # make sure both files are in the same folder
+myfile = open('words.txt','r') # change this to be the location of your dictionary
 
 global row
 global ltr_list
@@ -50,7 +50,7 @@ dic2 = []
 box = []
 answers = []
 boxnum = len(input_word)
-row = mah.sqrt(boxnum)
+row = int(math.sqrt(boxnum))
 qPos = []
 
 # removes all words from the dictionary that are too big or small
@@ -84,10 +84,9 @@ def indexof(x,y):
     a = 0
     b = []
     for item in x:
-        print(x[a])
         if x[a] == y:
             b.append(a)
-            print("true")
+            
         a += 1
 
     return b
@@ -99,6 +98,10 @@ ltr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','
 ltr_list = []
 for letter in input_word:
     ltr_list.append(letter)
+
+for num1 in range(row):
+    for num2 in range(row):
+        box.append([num1,num2])
 
 for x in range(boxnum):
     box[x].append(ltr_list[x])
@@ -222,9 +225,6 @@ def search(hist, word):
 
 # checks if any of the words left from the dictionary are found on the board
 for word in dic2:
-    print(word)
-    print(ltr_list)
-    print(indexof(ltr_list, word[0]))
     for pos in indexof(ltr_list, word[0]):
         
         ans = search([pos], word)
