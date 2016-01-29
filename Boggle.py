@@ -259,4 +259,7 @@ def show():
     
     print('Total words: ' + str(len(answers)))
 
-show()       
+show()
+
+print()
+input("Press enter to exit")
