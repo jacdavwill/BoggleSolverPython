@@ -241,10 +241,11 @@ for word in dic2:
             break
 
 # prints out all possible words in order of length
-def show():
-
+def show(boxnum):
     long = ''
-    wordsByLen = [[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+    wordsByLen = []
+    for num in range(boxnum):
+        wordsByLen.append([])
     for answer in answers:
         wordsByLen[len(answer) - 3].append(answer)
     
@@ -259,7 +260,7 @@ def show():
     
     print('Total words: ' + str(len(answers)))
 
-show()
+show(boxnum)
 
 print()
 input("Press enter to exit")
