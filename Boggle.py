@@ -91,9 +91,6 @@ def indexof(x,y):
 
     return b
 
-# letters of the alphabet
-ltr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-
 # places letters in a list    
 ltr_list = []
 for letter in input_word:
